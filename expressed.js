@@ -7,6 +7,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+const PORT = 3001;
+
 mongoose.connect("mongodb+srv://pritamy192000:Pritam1302!@cluster13021.2btvddl.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>{
     console.log("connectec to mongodb");
@@ -61,7 +63,8 @@ app.get('/', (req, res) => {
   });
   
 
-app.listen(3001, ()=> {
-    console.log("server runn")
+app.listen(PORT, ()=> {
+    console.log("server runn");
+    console.log(`Server is running on port ${PORT}`);
 })
 
